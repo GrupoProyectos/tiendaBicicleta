@@ -3,7 +3,8 @@ package database;
 import java.sql.*;
 import javax.sql.*;
 
-<<<<<<< HEAD
+import utilities.Show;
+
 /** Esta Clase abre la conexión con la Base de Datos
  * @author Grupo4
 =======
@@ -13,7 +14,7 @@ import utilities.Show;
  * Esta Clase abre la conexión con la Base de Datos
  * 
  * @author Chen, Iván, Aitor, Alejandro
->>>>>>> local
+
  * @version 1.0
  */
 
@@ -76,14 +77,12 @@ public class JDBC {
 			e.printStackTrace();
 		}
 	}
-<<<<<<< HEAD
+
 	/**
 	 * Método para pedir el Catálogo a la Base de Datos
 	 * @throws SQLException
 	 */
-=======
 
->>>>>>> local
 	public void peticionCatalogo() throws SQLException {
 
 		String query = "SELECT * FROM bicicleta"; // lanzamos la petición

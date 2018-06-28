@@ -2,9 +2,6 @@ package utilities;
 
 public class Show {
 
-	public void show_messege() {
-
-	}
 
 	public void print(Object object) {
 		System.out.println(object);
