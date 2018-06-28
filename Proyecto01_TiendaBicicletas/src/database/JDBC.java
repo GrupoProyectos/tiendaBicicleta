@@ -3,16 +3,29 @@ package database;
 import java.sql.*;
 import javax.sql.*;
 
-public class JDBC {
+/** Esta Clase abre la conexión con la Base de Datos
+ * @author Chen, Iván, Aitor, Alejandro
+ * @version 1.0
+ */
 
+public class JDBC {
+	
+	/** Atributos de la Clase
+	 */
+	
 	static Connection con;
 	static Statement st;
 	static ResultSet rs;
-
+	
+	/**Constructor vacío
+	*/
 	public JDBC() {
 
 	}
-
+	/**
+	 * Método para establecer la conexión con la Base de Datos
+	 * @throws SQLException
+	 */
 	public void conexion() throws SQLException {
 		try {
 			String driverClassName = "com.mysql.jdbc.Driver"; // comprobamos la  existencia del driver JDBC 
@@ -27,14 +40,13 @@ public class JDBC {
 			
 		} catch (ClassNotFoundException e) { // Excepción del driver
 			System.out.println("No se encuentra el driver");
-		} /*
-			 * catch (SQLException e) { System.out.println("Excepcion SQL: " +
-			 * e.getMessage()); System.out.println("Estado SQL: " +
-			 * e.getSQLState()); System.out.println("Código del Error: " +
-			 * e.getErrorCode()); }
-			 */
+		}  catch (SQLException e) { System.out.println("Excepcion SQL: " +
+			  e.getMessage()); System.out.println("Estado SQL: " +
+			  e.getSQLState()); System.out.println("Código del Error: " +
+			  e.getErrorCode()); }
+			 
 	}
-
+	
 	public void peticionCatalogo() throws SQLException {
 		st = con.createStatement(); // creamos un objeto de la Clase Statement
 
