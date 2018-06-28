@@ -1,10 +1,11 @@
-package servicios;
+package servicios.implementado;
 
 import java.util.List;
 
 import modelo.Bicicleta;
+import servicios.IServiciosBici;
 import datos.IDatosBici;
-import datos.DatosBiciImp;
+import datos.implementado.DatosBiciImp;
 
 public class ServiciosBiciImp implements IServiciosBici {
 
