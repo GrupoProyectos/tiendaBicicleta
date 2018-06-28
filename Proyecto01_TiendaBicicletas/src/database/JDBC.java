@@ -3,58 +3,111 @@ package database;
 import java.sql.*;
 import javax.sql.*;
 
+<<<<<<< HEAD
 /** Esta Clase abre la conexión con la Base de Datos
  * @author Grupo4
+=======
+import utilities.Show;
+
+/**
+ * Esta Clase abre la conexión con la Base de Datos
+ * 
+ * @author Chen, Iván, Aitor, Alejandro
+>>>>>>> local
  * @version 1.0
  */
 
 public class JDBC {
-	
-	/** Atributos de la Clase
-	 */
-	
-	static Connection con;
-	static Statement st;
-	static ResultSet rs;
-	
-	/**Constructor vacío
-	*/
-	public JDBC() {
 
+	/**
+	 * Atributos de la Clase
+	 */
+
+	private Connection con;
+
+	private Statement st;
+
+	String driverClassName = "com.mysql.jdbc.Driver";
+
+	String driverUrl = "jdbc:mysql://10.90.36.31:3306/tiendabicis"; // enlace hacia la BBDD
+
+	String user = "grupo4"; // usuario de la BBDD
+
+	String password = "1234"; // contraseña del usuario
+
+	/**
+	 * Constructor vacío
+	 */
+	public JDBC() {
+		try {
+			conexion();
+
+			peticionCatalogo();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
+
 	/**
 	 * Método para establecer la conexión con la Base de Datos
+	 * 
 	 * @throws SQLException
 	 */
 	public void conexion() throws SQLException {
 		try {
-			String driverClassName = "com.mysql.jdbc.Driver"; // comprobamos la  existencia del driver JDBC 
-			Class.forName(driverClassName); 
+			// STEP 2: Register JDBC driver
+			Class.forName(driverClassName);
 
-			String driverUrl = "jdbc:mysql://10.90.36.31/tiendabicis"; // enlace hacia la BBDD
+			// STEP 3: Open a connection
 
-			String user = "root"; // usuario de la BBDD
-			String password = "1111"; // contraseña del usuario
+			con = DriverManager.getConnection(driverUrl, user, password);
 
-			con = DriverManager.getConnection(driverUrl, user, password); // generamos la conexion
-			
-		} catch (ClassNotFoundException e) { // Excepción del driver
-			System.out.println("No se encuentra el driver");
-		}  catch (SQLException e) { System.out.println("Excepcion SQL: " +
-			  e.getMessage()); System.out.println("Estado SQL: " +
-			  e.getSQLState()); System.out.println("Código del Error: " +
-			  e.getErrorCode()); }
-			 
+			// STEP 4: Execute a query
+
+			st = con.createStatement();
+
+		} catch (SQLException se) {
+			// Handle errors for JDBC
+			se.printStackTrace();
+
+		} catch (Exception e) {
+			// Handle errors for Class.forName
+			e.printStackTrace();
+		}
 	}
+<<<<<<< HEAD
 	/**
 	 * Método para pedir el Catálogo a la Base de Datos
 	 * @throws SQLException
 	 */
+=======
+
+>>>>>>> local
 	public void peticionCatalogo() throws SQLException {
-		st = con.createStatement(); // creamos un objeto de la Clase Statement
 
 		String query = "SELECT * FROM bicicleta"; // lanzamos la petición
-		rs = st.executeQuery(query); //
+
+		ResultSet rs = st.executeQuery(query);
+
+		while (rs.next()) { // Retrieve by column name
+			int id = rs.getInt("idBicicleta");
+			String categoria = rs.getString("categoria");
+			String marca = rs.getString("marca");
+			String modelo = rs.getString("modelo");
+			String talla = rs.getString("talla");
+			int precio = rs.getInt("precio");
+
+			new Show().print("-> Register"); // Display values
+			new Show().print("id", id);
+			new Show().print("categoria", categoria);
+			new Show().print("marca", "" + marca);
+			new Show().print("modelo", "" + modelo);
+			new Show().print("talla", "" + talla);
+			new Show().print("precio", "" + precio);
+
+		}
+
 	}
 
 }

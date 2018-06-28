@@ -1,6 +1,7 @@
 package control;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -10,12 +11,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import database.JDBC;
+import servicios.IServiciosBici;
+import servicios.implementado.ServiciosBiciImp;
+
 @WebServlet(name = "SelectBici", urlPatterns = { "/SelectBici" }, asyncSupported = false)
 public class BicicletaControlador extends HttpServlet {
 
-	/** Método para recibir los distintos peticiones (como sacar catalogo, agregar nuevo bicicleta, etc) 
-	 * que ha enviado desde Bicicleta.html y desde este servlet redireccionar a los apartados de la web que corresponde
-	  */
+	/**
+	 * Método para recibir los distintos peticiones (como sacar catalogo, agregar
+	 * nuevo bicicleta, etc) que ha enviado desde Bicicleta.html y desde este
+	 * servlet redireccionar a los apartados de la web que corresponde
+	 */
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -28,6 +35,18 @@ public class BicicletaControlador extends HttpServlet {
 		// request.setAttribute("styles", result);
 
 		switch (peticion) {
+
+		case "getCatalogo":
+			
+			JDBC jdbc = new JDBC();
+			try {
+				jdbc.peticionCatalogo();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			break;
 
 		}
 
