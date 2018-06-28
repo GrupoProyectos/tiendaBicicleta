@@ -4,7 +4,7 @@ import java.sql.*;
 import javax.sql.*;
 
 /** Esta Clase abre la conexión con la Base de Datos
- * @author Chen, Iván, Aitor, Alejandro
+ * @author Grupo4
  * @version 1.0
  */
 
@@ -46,7 +46,10 @@ public class JDBC {
 			  e.getErrorCode()); }
 			 
 	}
-	
+	/**
+	 * Método para pedir el Catálogo a la Base de Datos
+	 * @throws SQLException
+	 */
 	public void peticionCatalogo() throws SQLException {
 		st = con.createStatement(); // creamos un objeto de la Clase Statement
 
