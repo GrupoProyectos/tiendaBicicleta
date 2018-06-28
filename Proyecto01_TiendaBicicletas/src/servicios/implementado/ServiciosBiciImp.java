@@ -9,11 +9,11 @@ import datos.implementado.DatosBiciImp;
 
 public class ServiciosBiciImp implements IServiciosBici {
 
-	private IDatosBici DatosBiciImp = new DatosBiciImp();
+	private IDatosBici idatosbici = new DatosBiciImp();
 
 	public List<Bicicleta> mostrarCatalogo(String catalogo){
 		
-		return DatosBiciImp.mostrarCatalogo(catalogo);
+		return idatosbici.mostrarCatalogo();
 	}
 
 }

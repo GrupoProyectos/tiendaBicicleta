@@ -11,7 +11,7 @@ public class DatosBiciImp implements IDatosBici {
 	public List<Bicicleta> mostrarCatalogo() {
 
 		List<Bicicleta> catalogo = new ArrayList<>();
-
+		
 		return catalogo;
 	}
 
