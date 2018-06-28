@@ -89,46 +89,55 @@
 			class="sr-only">Next</span>
 		</a>
 	</div>
-	
+
 	<!-- CONTENT -->
- <div class="container my-5">
-    <div class="row">
-        <!-- ARTICLE -->
-        <div class="card-group container-fluid  pt-4 bg-dark">
-            <div class="card col-12 col-sm-6 col-md-4 mb-3 text-light  bg-dark">
-                <img class="card-img-top img-fluid" src="Recursos/img/catalogo.png" alt="Card image web">
-                <div class="card-body">
-                    <h4 class="card-title">Catalogo</h4>
-                    <p class="card-text">Un catálogo completo de todos nuestros productos</p>
-                    <a href="web.html" class="btn btn-warning">Más detalles</a>
-                </div>
-           
-            </div>
-            <div class="card col-12 col-sm-6 col-md-4 mb-3 text-light bg-dark">
-                <img class="card-img-top img-fluid" src="Recursos/img/montana.jpg" alt="Card image Server">
-                <div class="card-body">
-                    <h4 class="card-title">Bicis de montaña</h4>
-                    <p class="card-text">¿Te gusta el campo? Tenemos las mejores bicicletas para hacer "el cabra"</p>
-                    <a href="servidor.html" class="btn btn-warning">Más detalles</a>
-                </div>
-               
-            </div>
-            <div class="card col-12 col-sm-6 col-md-4 mb-3 text-light  bg-dark">
-                <img class="card-img-top img-fluid" src="Recursos/img/carretera.jpg" alt="Card image Cloud">
-                <div class="card-body">
-                    <h4 class="card-title">Bicis de Carretera</h4>
-                    <p class="card-text">Para molestar a todos los coches que quieras.</p>
-                    <a href="cloud.html" class="btn btn-warning">Más detalles</a>
-                </div>
-                
-            </div>
-        </div>
-         <!-- ARTICLE -->
-         
-    </div>
- </div>
- 
- <!-- END CONTENT -->
+	<div class="container my-5">
+		<div class="row">
+			<!-- ARTICLE -->
+			<div class="card-group container-fluid  pt-4 bg-dark">
+				<div class="card col-12 col-sm-6 col-md-4 mb-3 text-light  bg-dark">
+					<img class="card-img-top img-fluid" src="Recursos/img/catalogo.png"
+						alt="Card image web">
+					<div class="card-body">
+						<h4 class="card-title">Catalogo</h4>
+						<p class="card-text">Un catálogo completo de todos nuestros
+							productos</p>
+						<form method="post" action="SelectBici">
+							<input type="hidden" name="peticion" value="getCatalogo">
+							<input class="btn btn-warning" type="submit" value="Más detalles">
+						</form>
+					</div>
+
+				</div>
+				<div class="card col-12 col-sm-6 col-md-4 mb-3 text-light bg-dark">
+					<img class="card-img-top img-fluid" src="Recursos/img/montana.jpg"
+						alt="Card image Server">
+					<div class="card-body">
+						<h4 class="card-title">Bicis de montaña</h4>
+						<p class="card-text">¿Te gusta el campo? Tenemos las mejores
+							bicicletas para hacer "el cabra"</p>
+						<a href="servidor.html" class="btn btn-warning">Más detalles</a>
+					</div>
+
+				</div>
+				<div class="card col-12 col-sm-6 col-md-4 mb-3 text-light  bg-dark">
+					<img class="card-img-top img-fluid"
+						src="Recursos/img/carretera.jpg" alt="Card image Cloud">
+					<div class="card-body">
+						<h4 class="card-title">Bicis de Carretera</h4>
+						<p class="card-text">Para molestar a todos los coches que
+							quieras.</p>
+						<a href="cloud.html" class="btn btn-warning">Más detalles</a>
+					</div>
+
+				</div>
+			</div>
+			<!-- ARTICLE -->
+
+		</div>
+	</div>
+
+	<!-- END CONTENT -->
 
 
 
