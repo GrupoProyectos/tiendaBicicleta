@@ -1,0 +1,13 @@
+
+
+.fondo {
+	background-image: url("../img/Fondo.jpg");
+	
+}
+#carouselExampleIndicators{
+	margin-top:5% !important;
+}
+.fondocatalogo {
+	background-image: url("../img/fondocatalogo.jpg");
+	
+}
