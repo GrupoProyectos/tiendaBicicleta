@@ -37,16 +37,9 @@ public class BicicletaControlador extends HttpServlet {
 		switch (peticion) {
 
 		case "getCatalogo":
-			
-			
-			try {
-				JDBC jdbc = new JDBC();
-				jdbc.peticionCatalogo();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
+
+			JDBC jdbc = new JDBC();
+
 			break;
 
 		}

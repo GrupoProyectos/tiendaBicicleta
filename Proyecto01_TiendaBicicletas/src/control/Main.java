@@ -8,7 +8,7 @@ public class Main {
 
 	public static void main(String[] args) throws SQLException {
 		// TODO Auto-generated method stub
-		//JDBC jdbc = new JDBC();
+		JDBC jdbc = new JDBC();
 		
 	}
 
