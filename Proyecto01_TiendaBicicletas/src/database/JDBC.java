@@ -5,16 +5,15 @@ import javax.sql.*;
 
 import utilities.Show;
 
-/** Esta Clase abre la conexión con la Base de Datos
- * @author Grupo4
-=======
-import utilities.Show;
-
 /**
  * Esta Clase abre la conexión con la Base de Datos
  * 
+ * @author Grupo4
+ * 
+ *         /** Esta Clase abre la conexión con la Base de Datos
+ * 
  * @author Chen, Iván, Aitor, Alejandro
-
+ * 
  * @version 1.0
  */
 
@@ -40,14 +39,7 @@ public class JDBC {
 	 * Constructor vacío
 	 */
 	public JDBC() {
-		try {
-			conexion();
 
-			peticionCatalogo();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 
 	/**
@@ -62,11 +54,11 @@ public class JDBC {
 
 			// STEP 3: Open a connection
 
-			con = DriverManager.getConnection(driverUrl, user, password);
+			this.con = DriverManager.getConnection(this.driverUrl, this.user, this.password);
 
 			// STEP 4: Execute a query
 
-			st = con.createStatement();
+			this.st = this.con.createStatement();
 
 		} catch (SQLException se) {
 			// Handle errors for JDBC
@@ -80,6 +72,7 @@ public class JDBC {
 
 	/**
 	 * Método para pedir el Catálogo a la Base de Datos
+	 * 
 	 * @throws SQLException
 	 */
 
@@ -87,7 +80,7 @@ public class JDBC {
 
 		String query = "SELECT * FROM bicicleta"; // lanzamos la petición
 
-		ResultSet rs = st.executeQuery(query);
+		ResultSet rs = this.st.executeQuery(query);
 
 		while (rs.next()) { // Retrieve by column name
 			int id = rs.getInt("idBicicleta");
@@ -107,6 +100,27 @@ public class JDBC {
 
 		}
 
+	}
+
+	/**
+	 * Metodo para desconectar de BBDD y cerrar las conexiones que ha establecido
+	 * anteriormente del metodo conexion()
+	 */
+	public void desconexion() {
+
+		try {
+			if (this.st != null)
+				this.st.close();
+		} catch (SQLException se2) {
+			se2.printStackTrace();
+		}
+
+		try {
+			if (this.con != null)
+				this.con.close();
+		} catch (SQLException se3) {
+			se3.printStackTrace();
+		}
 	}
 
 }
