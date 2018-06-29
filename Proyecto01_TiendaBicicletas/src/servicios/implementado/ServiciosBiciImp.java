@@ -15,5 +15,10 @@ public class ServiciosBiciImp implements IServiciosBici {
 		
 		return idatosbici.mostrarCatalogo();
 	}
+	
+	public Bicicleta mostrarBicicleta(int idBicicleta) {
+		
+		return idatosbici.mostrarBicicleta();
+	}
 
 }

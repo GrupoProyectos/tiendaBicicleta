@@ -7,5 +7,6 @@ import modelo.Bicicleta;
 public interface IDatosBici {
 
 	public List<Bicicleta> mostrarCatalogo();
+	public Bicicleta mostrarBicicleta();
 
 }
