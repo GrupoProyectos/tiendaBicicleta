@@ -26,10 +26,10 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto text-center ">
 				<li class="nav-item active"><a class="nav-link text-success"
-					href="Bicicleta.html">HOME <span class="sr-only">(current)</span></a>
+					href="./Bicicleta.html">HOME <span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item"><a class="nav-link text-success"
-					href="CatalogoBicicleta">CATALOGO</a></li>
+					href="./Catalogo.jsp">CATALOGO</a></li>
 
 				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle text-success" href="#"
