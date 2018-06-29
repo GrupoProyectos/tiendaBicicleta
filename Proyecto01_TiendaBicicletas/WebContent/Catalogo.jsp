@@ -57,10 +57,9 @@
 		<table class="table table-hover  bg-dark">
 			<thead>
 				<tr>
-					<th>Identificador</th>
-					<th>Categoria</th>
 					<th>Marca</th>
-					<th>modelo</th>
+					<th>Modelo</th>
+					<th>Categoria</th>
 					<th>Talla</th>
 					<th>Precio</th>
 				</tr>
@@ -68,10 +67,9 @@
 			<tbody>
 				<c:forEach var="reg" items="${catalogo}">
 					<tr>
-						<td>${reg.idBicicleta}</td>
-						<td>${reg.categoria}</td>
 						<td>${reg.marca}</td>
 						<td>${reg.modelo}</td>
+						<td>${reg.categoria}</td>
 						<td>${reg.talla}</td>
 						<td>${reg.precio}</td>
 					</tr>
