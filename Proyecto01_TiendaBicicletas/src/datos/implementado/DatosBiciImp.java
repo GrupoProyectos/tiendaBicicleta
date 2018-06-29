@@ -15,10 +15,22 @@ public class DatosBiciImp implements IDatosBici {
 		return catalogo;
 	}
 	
+	
+	
+	
+	
+
+	@Override
 	public Bicicleta mostrarBicicleta() {
-		Bicicleta bici = new Bicicleta;
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	/*
+	public Bicicleta mostrarBicicleta() {
+		//Bicicleta bici = new Bicicleta;
 		// falta conexión a bbdd y pedir la información
 		return bici;
-	}
+	}*/
 
 }
