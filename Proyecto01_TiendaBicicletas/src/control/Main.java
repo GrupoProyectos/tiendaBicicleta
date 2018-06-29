@@ -9,7 +9,9 @@ public class Main {
 	public static void main(String[] args) throws SQLException {
 		// TODO Auto-generated method stub
 		JDBC jdbc = new JDBC();
-		
+		jdbc.conexion();
+		jdbc.peticionCatalogo();
+		jdbc.desconexion();
 	}
 
 }

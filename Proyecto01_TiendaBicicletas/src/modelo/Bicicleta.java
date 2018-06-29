@@ -1,35 +1,49 @@
 package modelo;
+
 /**
  * 
  * @author Grupo 4
  * 
  * @version 1.0
  * 
-
+ * 
  */
 public class Bicicleta {
 
 	private int idBicicleta;
-	private Categoria categoria;
+	private String categoria;
 	private String marca;
 	private String modelo;
-	private Talla talla;
+	private String talla;
 	private double precio;
 
 	public Bicicleta() {
 
 	}
-/**
-	 * @param idBicicleta. Index de la tabla bicicleta.
-	 * @param Categoria. Categoría a la que pertenece la bicicicleta, enum "montaña","carretera"
-	 * @param marca. String que indica la marca de la bicicleta.
-	 * @param modelo. String que indica el modelo de la bicicleta.
-	 * @param talla. Enum para indicar la talla de la bici entre X, M y L
-	 * @param precio. Precio de la bicicleta.
-*/	
-	public Bicicleta(int idBicicleta, Categoria categoria, String marca, String modelo, Talla talla, double precio) {
+
+	/**
+	 * @param idBicicleta.
+	 *            Index de la tabla bicicleta.
+	 * @param Categoria.
+	 *            Categoría a la que pertenece la bicicicleta, enum
+	 *            "montaña","carretera"
+	 * @param marca.
+	 *            String que indica la marca de la bicicleta.
+	 * @param modelo.
+	 *            String que indica el modelo de la bicicleta.
+	 * @param talla.
+	 *            Enum para indicar la talla de la bici entre X, M y L
+	 * @param precio.
+	 *            Precio de la bicicleta.
+	 */
+	/*
+	 * public Bicicleta(int idBicicleta, Categoria categoria, String marca, String
+	 * modelo, Talla talla, double precio) { super(); this.idBicicleta =
+	 * idBicicleta; this.categoria = categoria; this.marca = marca; this.modelo =
+	 * modelo; this.talla = talla; this.precio = precio; }
+	 */
+	public Bicicleta(String categoria, String marca, String modelo, String talla, double precio) {
 		super();
-		this.idBicicleta = idBicicleta;
 		this.categoria = categoria;
 		this.marca = marca;
 		this.modelo = modelo;
@@ -38,6 +52,7 @@ public class Bicicleta {
 	}
 
 	// Setters & Getters
+
 	public int getIdBicicleta() {
 		return idBicicleta;
 	}
@@ -46,11 +61,11 @@ public class Bicicleta {
 		this.idBicicleta = idBicicleta;
 	}
 
-	public Categoria getCategoria() {
+	public String getCategoria() {
 		return categoria;
 	}
 
-	public void setCategoria(Categoria categoria) {
+	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
 
@@ -70,12 +85,12 @@ public class Bicicleta {
 		this.modelo = modelo;
 	}
 
-	public Talla getTalla() {
+	public String getTalla() {
 		return talla;
 	}
 
-	public void setTalla(Talla tamano) {
-		this.talla = tamano;
+	public void setTalla(String talla) {
+		this.talla = talla;
 	}
 
 	public double getPrecio() {
@@ -104,7 +119,5 @@ public class Bicicleta {
 		builder.append("]");
 		return builder.toString();
 	}
-	
-	
 
 }

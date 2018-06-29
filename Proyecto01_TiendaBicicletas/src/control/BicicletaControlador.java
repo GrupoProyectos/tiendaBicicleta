@@ -12,8 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import database.JDBC;
-import servicios.IServiciosBici;
-import servicios.implementado.ServiciosBiciImp;
+import modelo.Bicicleta;
 
 @WebServlet(name = "SelectBici", urlPatterns = { "/SelectBici" }, asyncSupported = false)
 public class BicicletaControlador extends HttpServlet {
@@ -38,14 +37,26 @@ public class BicicletaControlador extends HttpServlet {
 
 		case "getCatalogo":
 
-			JDBC jdbc = new JDBC();
+			try {
+				JDBC jdbc = new JDBC();
+				jdbc.conexion();
+				List<Bicicleta> bicis = jdbc.peticionCatalogo();
+
+				request.setAttribute("catalogo", bicis);
+				System.out.println(request.getAttribute("catalogo"));
+				jdbc.desconexion();
+
+				RequestDispatcher view = request.getRequestDispatcher("Catalogo.jsp");
+				view.forward(request, response);
+				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 
 			break;
 
 		}
-
-		System.out.println("Entra");
-		System.out.println(peticion);
 		// PASO 03: Salir
 		// RequestDispatcher view = request.getRequestDispatcher("result.jsp");
 		// view.forward(request, response);

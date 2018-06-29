@@ -8,8 +8,11 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="C:/Users/admin/Desktop/Temario/Iván Del Águila/Proyecto01/tiendaBicicleta/Proyecto01_TiendaBicicletas/WebContent/WEB-INF/lib/mysql-connector-java-5.1.46.jar"/>
-	<classpathentry kind="lib" path="C:/Users/admin/Desktop/Temario/Iván Del Águila/Proyecto01/tiendaBicicleta/Proyecto01_TiendaBicicletas/WebContent/WEB-INF/lib/ojdbc6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/admin/Desktop/Proyecto/tiendaBicicleta/Proyecto01_TiendaBicicletas/WebContent/WEB-INF/lib/ojdbc6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/admin/Desktop/Proyecto/tiendaBicicleta/Proyecto01_TiendaBicicletas/WebContent/WEB-INF/lib/mysql-connector-java-5.1.46.jar"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/admin/Desktop/Proyecto/tiendaBicicleta/Proyecto01_TiendaBicicletas/WebContent/WEB-INF/lib/jstl-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/admin/Desktop/Proyecto/tiendaBicicleta/Proyecto01_TiendaBicicletas/WebContent/WEB-INF/lib/jstl-connector-3.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/admin/Desktop/Proyecto/tiendaBicicleta/Proyecto01_TiendaBicicletas/WebContent/WEB-INF/lib/jstl-impl.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

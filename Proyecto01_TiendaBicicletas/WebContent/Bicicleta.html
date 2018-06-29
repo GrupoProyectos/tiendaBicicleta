@@ -28,7 +28,12 @@
 					<li class="nav-item active"><a class="nav-link text-success"
 						href="./Bicicleta.html">HOME <span class="sr-only">(current)</span></a>
 					</li>
-					<li class="nav-item"><a class="nav-link text-success" href="./Catalogo.jsp">CATALOGO</a>
+					<li class="nav-item">
+						<form method="post" action="SelectBici">
+							<input type="hidden" name="peticion" value="getCatalogo">
+							<input class="nav-link dropdown-toggle text-success"
+								type="submit" value="CATALOGO">
+						</form>
 					</li>
 
 					<li class="nav-item dropdown"><a

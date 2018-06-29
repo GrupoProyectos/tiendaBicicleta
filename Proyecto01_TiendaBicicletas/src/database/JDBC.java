@@ -1,9 +1,15 @@
 package database;
 
-import java.sql.*;
-import javax.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
-import utilities.Show;
+import modelo.Bicicleta;
 
 /**
  * Esta Clase abre la conexión con la Base de Datos
@@ -76,13 +82,19 @@ public class JDBC {
 	 * @throws SQLException
 	 */
 
-	public void peticionCatalogo() throws SQLException {
+	public List<Bicicleta> peticionCatalogo() throws SQLException {
 
 		String query = "SELECT * FROM bicicleta"; // lanzamos la petición
 
 		ResultSet rs = this.st.executeQuery(query);
 
+		// ResultSetMetaData rsMetaData = rs.getMetaData();
+
+		List<Bicicleta> bicis = new ArrayList<Bicicleta>();
+
 		while (rs.next()) { // Retrieve by column name
+			Bicicleta b = new Bicicleta();
+
 			int id = rs.getInt("idBicicleta");
 			String categoria = rs.getString("categoria");
 			String marca = rs.getString("marca");
@@ -90,15 +102,23 @@ public class JDBC {
 			String talla = rs.getString("talla");
 			int precio = rs.getInt("precio");
 
-			new Show().print("-> Register"); // Display values
-			new Show().print("id", id);
-			new Show().print("categoria", categoria);
-			new Show().print("marca", "" + marca);
-			new Show().print("modelo", "" + modelo);
-			new Show().print("talla", "" + talla);
-			new Show().print("precio", "" + precio);
+			b.setIdBicicleta(id);
+			b.setCategoria(categoria);
+			b.setMarca(marca);
+			b.setModelo(modelo);
+			b.setTalla(talla);
+			b.setPrecio(precio);
+
+			bicis.add(b);
+			/*
+			 * new Show().print("-> Register"); // Display values new Show().print("id",
+			 * id); new Show().print("categoria", categoria); new Show().print("marca", "" +
+			 * marca); new Show().print("modelo", "" + modelo); new Show().print("talla", ""
+			 * + talla); new Show().print("precio", "" + precio);
+			 */
 
 		}
+		return bicis;
 
 	}
 
