@@ -1,12 +1,12 @@
 package datos;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import modelo.Bicicleta;
 
 public interface IDatosBici {
 
-	public List<Bicicleta> mostrarCatalogo();
+	public ArrayList<Bicicleta> mostrarCatalogo();
 	public Bicicleta mostrarBicicleta();
 
 }
