@@ -16,7 +16,7 @@ import modelo.Bicicleta;
  * 
  * @author Grupo4
  * 
- *         /** Esta Clase abre la conexión con la Base de Datos
+ *         
  * 
  * @author Chen, Iván, Aitor, Alejandro
  * 
@@ -29,9 +29,9 @@ public class JDBC {
 	 * Atributos de la Clase
 	 */
 
-	private Connection con;
+	Connection con = null;
 
-	private Statement st;
+	Statement st = null;
 
 	String driverClassName = "com.mysql.jdbc.Driver";
 
@@ -41,12 +41,6 @@ public class JDBC {
 
 	String password = "1234"; // contraseña del usuario
 
-	/**
-	 * Constructor vacío
-	 */
-	public JDBC() {
-
-	}
 
 	/**
 	 * Método para establecer la conexión con la Base de Datos
@@ -70,10 +64,35 @@ public class JDBC {
 			// Handle errors for JDBC
 			se.printStackTrace();
 
-		} catch (Exception e) {
+		} catch (Exception se) {
 			// Handle errors for Class.forName
-			e.printStackTrace();
+			se.printStackTrace();
 		}
+	}
+	
+	/**
+	 * Otro método de conexión
+	 * 
+	 * @throws SQLException
+	 */
+	public JDBC() {
+		try {
+			Class.forName(driverClassName);
+			con = DriverManager.getConnection(driverUrl, user, password);
+		} catch(ClassNotFoundException se){
+			System.out.println("No se encuentra el driver");
+		} catch(SQLException se) {
+			System.out.println("Excepcion SQL: " + se.getMessage());
+            System.out.println("Estado SQL: " + se.getSQLState());
+            System.out.println("Código del Error: " + se.getErrorCode());
+		} catch (Exception se) {
+            System.out.println("Otro problema: " + se);
+        }
+		
+	}
+	
+	public Connection getConnection() {
+		return con;
 	}
 
 	/**
