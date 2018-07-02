@@ -54,8 +54,40 @@ public class DatosBiciImp implements IDatosBici {
 	}
 
 	@Override
-	public Bicicleta mostrarBicicleta() {
-		return null;
+	/**
+	 * Metodo para recoger la informacion de una bicicleta a la BBDD para
+	 * mostrarla mas tarde en una pagina informativa.
+	 * 
+	 */
+
+	public Bicicleta mostrarBicicleta(int idBicicleta) {
+
+		Bicicleta b = new Bicicleta();
+		Statement st = null;
+		ResultSet rs = null;
+
+		try {
+			JDBC con = new JDBC();
+			st = con.getConnection().createStatement();
+			rs = st.executeQuery("SELECT * from bicicleta where idBicicleta = '" + idBicicleta + "'");
+
+			while (rs.next()) {
+
+				b.setIdBicicleta(rs.getInt("idBicicleta"));
+				b.setCategoria(rs.getString("categoria")); 
+				b.setMarca(rs.getString("marca"));
+				b.setModelo(rs.getString("modelo"));
+				b.setTalla(rs.getString("talla"));
+				b.setPrecio(rs.getDouble("precio"));
+
+			}
+			System.out.println(b);
+			con.getConnection().close();
+
+		} catch (SQLException ex) {
+
+		}
+		return b;
 	}
 
 	/*
