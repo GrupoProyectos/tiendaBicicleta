@@ -37,7 +37,9 @@ public class BicicletaControlador extends HttpServlet {
 		// PASO 02: Recopilar la respuesta
 		List<Bicicleta> catalogo = biciService.mostrarCatalogo(peticion);
 		request.setAttribute("catalogo", catalogo);
-
+		
+		RequestDispatcher view = request.getRequestDispatcher("Catalogo.jsp");
+		view.forward(request, response);
 		/**
 		switch (peticion) {
 
