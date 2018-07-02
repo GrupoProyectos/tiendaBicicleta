@@ -7,6 +7,6 @@ import modelo.Bicicleta;
 public interface IDatosBici {
 
 	public ArrayList<Bicicleta> mostrarCatalogo();
-	public Bicicleta mostrarBicicleta();
+	public Bicicleta mostrarBicicleta(int idBicicleta);
 
 }
