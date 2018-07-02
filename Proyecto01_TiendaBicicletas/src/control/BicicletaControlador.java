@@ -47,10 +47,10 @@ public class BicicletaControlador extends HttpServlet {
 		switch (peticion) {
 
 		case "detalle":
-			String id = request.getParameter("id");
+			int id = Integer.parseInt(request.getParameter("hola"));
 			System.out.println(id);
-			Bicicleta b = biciService.mostrarBicicleta(Integer.parseInt(id));
-
+			Bicicleta b = biciService.mostrarBicicleta(id);
+			System.out.println(b.toString());
 			request.setAttribute("bicicleta", b);
 
 			RequestDispatcher view = request.getRequestDispatcher("Detalle.jsp");
@@ -61,6 +61,10 @@ public class BicicletaControlador extends HttpServlet {
 		case "getCatalogo":
 
 			List<Bicicleta> catalogo = biciService.mostrarCatalogo();
+			for(int i=0;i<catalogo.size();i++){
+				System.out.println(catalogo.get(i).getIdBicicleta());	
+			}
+			
 			request.setAttribute("catalogo", catalogo);
 
 			RequestDispatcher view2 = request.getRequestDispatcher("Catalogo.jsp");

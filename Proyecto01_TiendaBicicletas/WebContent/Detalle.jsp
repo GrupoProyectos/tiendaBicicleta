@@ -67,11 +67,11 @@
 		style="width: 18rem;">
 		<div class="card-body">
 		
-			<h5 class="card-title">Marca: <c:out value="${b.marca} " /></h5>
-			<h6 class="card-subtitle mb-2 text-muted">Modelo: ${b.modelo}</h6>
-			<p class="card-text">Categoría: ${b.categoria}</p>
-			<p class="card-text">Talla: ${b.talla}</p>
-			<p class="card-text">Precio: ${b.precio}</p>
+			<h5 class="card-title">Marca: ${bicicleta.marca}</h5>
+			<h6 class="card-subtitle mb-2 text-muted">Modelo: ${bicicleta.modelo}</h6>
+			<p class="card-text">Categoría: ${bicicleta.categoria}</p>
+			<p class="card-text">Talla: ${bicicleta.talla}</p>
+			<p class="card-text">Precio: ${bicicleta.precio}</p>
 		</div>
 	</div>
 

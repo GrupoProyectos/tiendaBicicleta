@@ -54,8 +54,8 @@ public class DatosBiciImp implements IDatosBici {
 	}
 
 	/**
-	 * Metodo para recoger la informacion de una bicicleta a la BBDD para mostrarla
-	 * mas tarde en una pagina informativa.
+	 * Metodo para recoger la informacion de una bicicleta a la BBDD para
+	 * mostrarla mas tarde en una pagina informativa.
 	 * 
 	 */
 
@@ -68,26 +68,28 @@ public class DatosBiciImp implements IDatosBici {
 		try {
 			JDBC con = new JDBC();
 			st = con.getConnection().createStatement();
-			rs = st.executeQuery("SELECT * from bicicleta where idBicicleta = '" + idBicicleta + "'");
-
-			b.setIdBicicleta(rs.getInt("idBicicleta"));
-			b.setCategoria(rs.getString("categoria"));
-			b.setMarca(rs.getString("marca"));
-			b.setModelo(rs.getString("modelo"));
-			b.setTalla(rs.getString("talla"));
-			b.setPrecio(rs.getDouble("precio"));
-
-			System.out.println(b);
+			rs = st.executeQuery("SELECT * from bicicleta where idBicicleta = " + idBicicleta + ";");
+			while(rs.next()){
+				b.setIdBicicleta(rs.getInt("idBicicleta"));
+				b.setCategoria(rs.getString("categoria"));
+				b.setMarca(rs.getString("marca"));
+				b.setModelo(rs.getString("modelo"));
+				b.setTalla(rs.getString("talla"));
+				b.setPrecio(rs.getDouble("precio"));
+			}
+			
+			System.out.println("base datos"+b.toString());
 			con.getConnection().close();
 
 		} catch (SQLException ex) {
-
+			System.out.println(ex.getMessage());
 		}
 		return b;
 
 		/*
-		 * public Bicicleta mostrarBicicleta() { //Bicicleta bici = new Bicicleta; //
-		 * falta conexión a bbdd y pedir la información return bici; }
+		 * public Bicicleta mostrarBicicleta() { //Bicicleta bici = new
+		 * Bicicleta; // falta conexión a bbdd y pedir la información return
+		 * bici; }
 		 */
 
 	}

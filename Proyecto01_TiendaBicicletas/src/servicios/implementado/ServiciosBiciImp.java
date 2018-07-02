@@ -11,15 +11,14 @@ public class ServiciosBiciImp implements IServiciosBici {
 
 	private IDatosBici idatosbici = new DatosBiciImp();
 
-	public List<Bicicleta> mostrarCatalogo(){
-		
+	public List<Bicicleta> mostrarCatalogo() {
+
 		return idatosbici.mostrarCatalogo();
 	}
 
-	@Override
 	public Bicicleta mostrarBicicleta(int idBicicleta) {
-		// TODO Auto-generated method stub
-		return null;
+
+		return idatosbici.mostrarBicicleta(idBicicleta);
 	}
-	
+
 }
