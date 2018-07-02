@@ -69,17 +69,25 @@
 					<th>Categoria</th>
 					<th>Talla</th>
 					<th>Precio</th>
+					<th>Ver detalle</th>
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach var="reg" items="${catalogo}">
+
+					<form method="post" action="SelectBici">
 					<tr class="table-info">
 						<td>${reg.marca}</td>
 						<td>${reg.modelo}</td>
 						<td>${reg.categoria}</td>
 						<td>${reg.talla}</td>
 						<td>${reg.precio}</td>
+						<input type="hidden" name="peticion" value="detalle">
+						<input type="hidden" name="id" value=${reg.idBicicleta}>
+						<td><input type="submit" class="btn btn-primary"
+							value="detalle"></td>
 					</tr>
+					<form>
 				</c:forEach>
 
 			</tbody>

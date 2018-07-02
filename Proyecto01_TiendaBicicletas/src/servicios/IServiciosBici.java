@@ -6,7 +6,7 @@ import modelo.Bicicleta;
 
 public interface IServiciosBici { 
 	
-	public List<Bicicleta> mostrarCatalogo(String catalogo);
+	public List<Bicicleta> mostrarCatalogo();
 	public Bicicleta mostrarBicicleta(int idBicicleta);
 	
 	/*

@@ -54,8 +54,8 @@ public class DatosBiciImp implements IDatosBici {
 	}
 
 	/**
-	 * Metodo para recoger la informacion de una bicicleta a la BBDD para
-	 * mostrarla mas tarde en una pagina informativa.
+	 * Metodo para recoger la informacion de una bicicleta a la BBDD para mostrarla
+	 * mas tarde en una pagina informativa.
 	 * 
 	 */
 
@@ -70,16 +70,13 @@ public class DatosBiciImp implements IDatosBici {
 			st = con.getConnection().createStatement();
 			rs = st.executeQuery("SELECT * from bicicleta where idBicicleta = '" + idBicicleta + "'");
 
-			while (rs.next()) {
+			b.setIdBicicleta(rs.getInt("idBicicleta"));
+			b.setCategoria(rs.getString("categoria"));
+			b.setMarca(rs.getString("marca"));
+			b.setModelo(rs.getString("modelo"));
+			b.setTalla(rs.getString("talla"));
+			b.setPrecio(rs.getDouble("precio"));
 
-				b.setIdBicicleta(rs.getInt("idBicicleta"));
-				b.setCategoria(rs.getString("categoria"));
-				b.setMarca(rs.getString("marca"));
-				b.setModelo(rs.getString("modelo"));
-				b.setTalla(rs.getString("talla"));
-				b.setPrecio(rs.getDouble("precio"));
-
-			}
 			System.out.println(b);
 			con.getConnection().close();
 
@@ -89,9 +86,8 @@ public class DatosBiciImp implements IDatosBici {
 		return b;
 
 		/*
-		 * public Bicicleta mostrarBicicleta() { //Bicicleta bici = new
-		 * Bicicleta; // falta conexión a bbdd y pedir la información return
-		 * bici; }
+		 * public Bicicleta mostrarBicicleta() { //Bicicleta bici = new Bicicleta; //
+		 * falta conexión a bbdd y pedir la información return bici; }
 		 */
 
 	}

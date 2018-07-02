@@ -11,7 +11,7 @@ public class ServiciosBiciImp implements IServiciosBici {
 
 	private IDatosBici idatosbici = new DatosBiciImp();
 
-	public List<Bicicleta> mostrarCatalogo(String catalogo){
+	public List<Bicicleta> mostrarCatalogo(){
 		
 		return idatosbici.mostrarCatalogo();
 	}
