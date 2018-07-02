@@ -7,6 +7,10 @@
 #carouselExampleIndicators{
 	margin-top:5% !important;
 }
+#Indicators{
+	margin-top:10% !important;
+	width: 50%;
+}
 .fondocatalogo {
 	background-image: url("../img/fondocatalogo.jpg");
 	

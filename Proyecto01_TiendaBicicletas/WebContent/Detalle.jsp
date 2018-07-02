@@ -61,14 +61,18 @@
 		</div>
 		</nav>
 	</div>
-	<div class="card" style="width: 18rem;">
+
+
+	<div id="Indicators" class="card container-fluid  pt-4 w-50"
+		style="width: 18rem;">
 		<div class="card-body">
-			<h5 class="card-title">Marca: ${bicicleta.marca}</h5>
+		
+			<h5 class="card-title">Marca: ${b.marca} </h5>
 			<h6 class="card-subtitle mb-2 text-muted">Modelo:
-				${bicicleta.modelo}</h6>
-			<p class="card-text">Categoría: ${bicicleta.categoria}</p>
-			<p class="card-text">Talla: ${bicicleta.talla}</p>
-			<p class="card-text">Precio: ${bicibleta.precio}</p>
+				${b.modelo}</h6>
+			<p class="card-text">Categoría: ${b.categoria}</p>
+			<p class="card-text">Talla: ${b.talla}</p>
+			<p class="card-text">Precio: ${b.precio}</p>
 		</div>
 	</div>
 
