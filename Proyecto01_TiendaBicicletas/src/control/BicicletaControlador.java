@@ -1,5 +1,7 @@
 package control;
 
+import servicios.IServiciosBici;
+import servicios.implementado.ServiciosBiciImp;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
@@ -16,6 +18,8 @@ import modelo.Bicicleta;
 
 @WebServlet(name = "SelectBici", urlPatterns = { "/SelectBici" }, asyncSupported = false)
 public class BicicletaControlador extends HttpServlet {
+	
+	private IServiciosBici biciService = new ServiciosBiciImp();
 
 	/**
 	 * Método para recibir los distintos peticiones (como sacar catalogo, agregar
@@ -24,15 +28,17 @@ public class BicicletaControlador extends HttpServlet {
 	 */
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		
 
 		// PASO 01: Recoger informacion
-		String peticion = request.getParameter("peticion");
-		// BeerExpert be = new BeerExpert();
+		String peticion = request.getParameter("peticion");		
 
 		// PASO 02: Recopilar la respuesta
-		// List<Cerveza> result = be.getBrands(c);
-		// request.setAttribute("styles", result);
+		List<Bicicleta> catalogo = biciService.mostrarCatalogo(peticion);
+		request.setAttribute("catalogo", catalogo);
 
+		/**
 		switch (peticion) {
 
 		case "getCatalogo":
@@ -55,13 +61,14 @@ public class BicicletaControlador extends HttpServlet {
 			}
 
 			break;
-
+		 
 		}
+		
+		**/
 		// PASO 03: Salir
-		// RequestDispatcher view = request.getRequestDispatcher("result.jsp");
-		// view.forward(request, response);
-		// request.getRequestDispatcher("result.jsp").forward(request,
-		// response);
+		RequestDispatcher view = request.getRequestDispatcher("Catalogo.jsp");
+		view.forward(request, response);
+		request.getRequestDispatcher("result.jsp").forward(request,	response);
 
 	}
 

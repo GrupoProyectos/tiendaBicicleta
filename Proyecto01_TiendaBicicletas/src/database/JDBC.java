@@ -47,6 +47,7 @@ public class JDBC {
 	 * 
 	 * @throws SQLException
 	 */
+	/**
 	public void conexion() throws SQLException {
 		try {
 			// STEP 2: Register JDBC driver
@@ -69,7 +70,7 @@ public class JDBC {
 			se.printStackTrace();
 		}
 	}
-	
+	**/
 	/**
 	 * Otro método de conexión
 	 * 
@@ -100,7 +101,7 @@ public class JDBC {
 	 * 
 	 * @throws SQLException
 	 */
-
+	/*
 	public List<Bicicleta> peticionCatalogo() throws SQLException {
 
 		String query = "SELECT * FROM bicicleta"; // lanzamos la petición
@@ -134,13 +135,13 @@ public class JDBC {
 			 * id); new Show().print("categoria", categoria); new Show().print("marca", "" +
 			 * marca); new Show().print("modelo", "" + modelo); new Show().print("talla", ""
 			 * + talla); new Show().print("precio", "" + precio);
-			 */
+			 
 
 		}
 		return bicis;
 
 	}
-
+	*/
 	/**
 	 * Metodo para desconectar de BBDD y cerrar las conexiones que ha establecido
 	 * anteriormente del metodo conexion()

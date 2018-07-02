@@ -53,7 +53,6 @@ public class DatosBiciImp implements IDatosBici {
 
 	}
 
-	@Override
 	/**
 	 * Metodo para recoger la informacion de una bicicleta a la BBDD para
 	 * mostrarla mas tarde en una pagina informativa.
@@ -74,7 +73,7 @@ public class DatosBiciImp implements IDatosBici {
 			while (rs.next()) {
 
 				b.setIdBicicleta(rs.getInt("idBicicleta"));
-				b.setCategoria(rs.getString("categoria")); 
+				b.setCategoria(rs.getString("categoria"));
 				b.setMarca(rs.getString("marca"));
 				b.setModelo(rs.getString("modelo"));
 				b.setTalla(rs.getString("talla"));
@@ -88,11 +87,12 @@ public class DatosBiciImp implements IDatosBici {
 
 		}
 		return b;
+
+		/*
+		 * public Bicicleta mostrarBicicleta() { //Bicicleta bici = new
+		 * Bicicleta; // falta conexión a bbdd y pedir la información return
+		 * bici; }
+		 */
+
 	}
-
-	/*
-	 * public Bicicleta mostrarBicicleta() { //Bicicleta bici = new Bicicleta;
-	 * // falta conexión a bbdd y pedir la información return bici; }
-	 */
-
 }
