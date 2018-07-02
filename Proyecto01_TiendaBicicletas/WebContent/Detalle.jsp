@@ -67,9 +67,8 @@
 		style="width: 18rem;">
 		<div class="card-body">
 		
-			<h5 class="card-title">Marca: ${b.marca} </h5>
-			<h6 class="card-subtitle mb-2 text-muted">Modelo:
-				${b.modelo}</h6>
+			<h5 class="card-title">Marca: <c:out value="${b.marca} " /></h5>
+			<h6 class="card-subtitle mb-2 text-muted">Modelo: ${b.modelo}</h6>
 			<p class="card-text">Categoría: ${b.categoria}</p>
 			<p class="card-text">Talla: ${b.talla}</p>
 			<p class="card-text">Precio: ${b.precio}</p>
