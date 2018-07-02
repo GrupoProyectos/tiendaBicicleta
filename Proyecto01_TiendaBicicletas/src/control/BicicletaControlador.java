@@ -24,7 +24,7 @@ public class BicicletaControlador extends HttpServlet {
 	private IServiciosBici biciService = new ServiciosBiciImp();
 
 	/**
-	 * Método para recibir los distintos peticiones (como sacar catalogo, agregar
+	 * Mï¿½todo para recibir los distintos peticiones (como sacar catalogo, agregar
 	 * nuevo bicicleta, etc) que ha enviado desde Bicicleta.html y desde este
 	 * servlet redireccionar a los apartados de la web que corresponde
 	 */
@@ -47,11 +47,10 @@ public class BicicletaControlador extends HttpServlet {
 		switch (peticion) {
 
 		case "detalle":
-			int id = Integer.parseInt(request.getParameter("hola"));
-			System.out.println(id);
-			Bicicleta b = biciService.mostrarBicicleta(id);
-			System.out.println(b.toString());
-			request.setAttribute("bicicleta", b);
+			String id = request.getParameter("id");
+			Bicicleta bicicleta = biciService.mostrarBicicleta(Integer.parseInt(id));
+
+			request.setAttribute("bicicleta", bicicleta);
 
 			RequestDispatcher view = request.getRequestDispatcher("Detalle.jsp");
 			view.forward(request, response);
@@ -61,10 +60,11 @@ public class BicicletaControlador extends HttpServlet {
 		case "getCatalogo":
 
 			List<Bicicleta> catalogo = biciService.mostrarCatalogo();
-			for(int i=0;i<catalogo.size();i++){
-				System.out.println(catalogo.get(i).getIdBicicleta());	
-			}
-			
+			/*
+			 * for (int i = 0; i < catalogo.size(); i++) {
+			 * System.out.println(catalogo.get(i).getIdBicicleta()); }
+			 */
+
 			request.setAttribute("catalogo", catalogo);
 
 			RequestDispatcher view2 = request.getRequestDispatcher("Catalogo.jsp");

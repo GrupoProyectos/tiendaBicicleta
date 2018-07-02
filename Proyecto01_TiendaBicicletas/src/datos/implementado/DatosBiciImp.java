@@ -12,7 +12,7 @@ import modelo.Bicicleta;
 public class DatosBiciImp implements IDatosBici {
 
 	/**
-	 * Método para recuperar el catálogo de la base de datos
+	 * Mï¿½todo para recuperar el catï¿½logo de la base de datos
 	 * 
 	 * @ @return catalogo
 	 */
@@ -59,16 +59,17 @@ public class DatosBiciImp implements IDatosBici {
 	 * 
 	 */
 
-	public Bicicleta mostrarBicicleta(int idBicicleta) {
+	public Bicicleta mostrarBicicleta(int id) {
+
+		Statement st = null;
+		ResultSet rs;
 
 		Bicicleta b = new Bicicleta();
-		Statement st = null;
-		ResultSet rs = null;
-
 		try {
+			
 			JDBC con = new JDBC();
 			st = con.getConnection().createStatement();
-			rs = st.executeQuery("SELECT * from bicicleta where idBicicleta = " + idBicicleta + ";");
+			rs = st.executeQuery("SELECT * from bicicleta where idBicicleta = " + id + ";");
 			while(rs.next()){
 				b.setIdBicicleta(rs.getInt("idBicicleta"));
 				b.setCategoria(rs.getString("categoria"));
@@ -78,7 +79,6 @@ public class DatosBiciImp implements IDatosBici {
 				b.setPrecio(rs.getDouble("precio"));
 			}
 			
-			System.out.println("base datos"+b.toString());
 			con.getConnection().close();
 
 		} catch (SQLException ex) {
@@ -88,7 +88,7 @@ public class DatosBiciImp implements IDatosBici {
 
 		/*
 		 * public Bicicleta mostrarBicicleta() { //Bicicleta bici = new
-		 * Bicicleta; // falta conexión a bbdd y pedir la información return
+		 * Bicicleta; // falta conexiï¿½n a bbdd y pedir la informaciï¿½n return
 		 * bici; }
 		 */
 

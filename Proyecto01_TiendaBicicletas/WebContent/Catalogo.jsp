@@ -76,17 +76,18 @@
 				<c:forEach var="reg" items="${catalogo}">
 
 					<form method="post" action="SelectBici">
-					<tr class="table-info">
-						<td>${reg.marca}</td>
-						<td>${reg.modelo}</td>
-						<td>${reg.categoria}</td>
-						<td>${reg.talla}</td>
-						<td>${reg.precio}</td>
-						<input type="hidden" name="peticion" value="detalle">
-						<!--  <input type="hidden" name="id2"  value="${reg.idBicicleta}">  -->
-						<td><input type="submit" class="btn btn-primary text-primary" id="holaaa" name="hola" value= "${reg.idBicicleta}" ></td>
-					</tr>
-					<form>
+						<tr class="table-info">
+							<td>${reg.marca}</td>
+							<td>${reg.modelo}</td>
+							<td>${reg.categoria}</td>
+							<td>${reg.talla}</td>
+							<td>${reg.precio}</td>
+							<input type="hidden" name="peticion" value="detalle">
+							<input type="hidden" name="id" value="${reg.idBicicleta}">
+							<td><input type="submit"
+								class="btn btn-primary text-light" value="Detalle"></td>
+						</tr>
+						<form>
 				</c:forEach>
 
 			</tbody>

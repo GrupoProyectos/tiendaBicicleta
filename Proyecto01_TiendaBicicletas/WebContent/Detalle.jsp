@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta charsert="UTF-8">
-<title>Catálogo</title>
+<title>Catï¿½logo</title>
 <link rel="stylesheet" href="Recursos/css/bootstrap.min.css">
 <link rel="stylesheet" href="Recursos/css/estilos.css">
 </head>
@@ -53,7 +53,7 @@
 					aria-haspopup="true" aria-expanded="false"> AREA TECNICA </a>
 					<div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item text-light font-weight-bold" href="#">Iniciar
-							Sesión</a>
+							Sesiï¿½n</a>
 						<div class="dropdown-divider text-light font-weight-bold"></div>
 						<a class="dropdown-item text-light font-weight-bold" href="#">Registrarse</a>
 					</div></li>
@@ -66,12 +66,12 @@
 	<div id="Indicators" class="card container-fluid  pt-4 w-50"
 		style="width: 18rem;">
 		<div class="card-body">
-		
-			<h5 class="card-title">Marca: ${bicicleta.marca}</h5>
-			<h6 class="card-subtitle mb-2 text-muted">Modelo: ${bicicleta.modelo}</h6>
-			<p class="card-text">Categoría: ${bicicleta.categoria}</p>
-			<p class="card-text">Talla: ${bicicleta.talla}</p>
-			<p class="card-text">Precio: ${bicicleta.precio}</p>
+
+			<h4 class="card-title">Marca: ${bicicleta.marca}</h4>
+			<h5 class="card-subtitle">Modelo: ${bicicleta.modelo}</h5>
+			<h6 class="card-text">Categoria: ${bicicleta.categoria}</h6>
+			<h6 class="card-text">Talla: ${bicicleta.talla}</h6>
+			<h6 class="card-text">Precio: ${bicicleta.precio}</h6>
 		</div>
 	</div>
 
