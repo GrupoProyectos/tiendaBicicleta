@@ -83,9 +83,10 @@
 							<td>${reg.talla}</td>
 							<td>${reg.precio}</td>
 							<input type="hidden" name="peticion" value="detalle">
-							<input type="hidden" name="id" value="${reg.idBicicleta}">
+							<!--  <input type="hidden" name="id"  value="${reg.idBicicleta}">  -->
 							<td><input type="submit"
-								class="btn btn-primary text-light" value="Detalle"></td>
+								class="btn btn-primary text-primary" name="id"
+								value="${reg.idBicicleta}"></td>
 						</tr>
 						<form>
 				</c:forEach>
