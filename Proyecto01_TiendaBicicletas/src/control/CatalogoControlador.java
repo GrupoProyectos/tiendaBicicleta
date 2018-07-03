@@ -14,8 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import modelo.Bicicleta;
 
-@WebServlet(name = "SelectBici", urlPatterns = { "/SelectBici" }, asyncSupported = false)
-public class BicicletaControlador extends HttpServlet {
+@WebServlet(name = "getAll", urlPatterns = { "/getAll" }, asyncSupported = false)
+public class CatalogoControlador extends HttpServlet {
 
 	/**
 	 * 
@@ -31,55 +31,12 @@ public class BicicletaControlador extends HttpServlet {
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		// PASO 01: Recoger informacion
+		List<Bicicleta> catalogo = biciService.mostrarCatalogo();
 
-		String peticion = request.getParameter("peticion");
+		request.setAttribute("catalogo", catalogo);
 
-		// PASO 02: Recopilar la respuesta List<Bicicleta> catalogo =
-		/*
-		 * biciService.mostrarCatalogo(peticion); request.setAttribute("catalogo",
-		 * catalogo);
-		 * 
-		 * RequestDispatcher view = request.getRequestDispatcher("Catalogo.jsp");
-		 * view.forward(request, response);
-		 */
-
-		switch (peticion) {
-
-		case "detalle":
-			String id = request.getParameter("id");
-			Bicicleta bicicleta = biciService.mostrarBicicleta(Integer.parseInt(id));
-
-			request.setAttribute("bicicleta", bicicleta);
-
-			RequestDispatcher view = request.getRequestDispatcher("Detalle.jsp");
-			view.forward(request, response);
-
-			break;
-
-		case "getCatalogo":
-
-			List<Bicicleta> catalogo = biciService.mostrarCatalogo();
-			/*
-			 * for (int i = 0; i < catalogo.size(); i++) {
-			 * System.out.println(catalogo.get(i).getIdBicicleta()); }
-			 */
-
-			request.setAttribute("catalogo", catalogo);
-
-			RequestDispatcher view2 = request.getRequestDispatcher("Catalogo.jsp");
-			view2.forward(request, response);
-
-			break;
-
-		}
-
-		// PASO 03: Salir
-		/*
-		 * RequestDispatcher view = request.getRequestDispatcher("Catalogo.jsp");
-		 * view.forward(request, response);
-		 * request.getRequestDispatcher("result.jsp").forward(request, response);
-		 */
+		RequestDispatcher view = request.getRequestDispatcher("Catalogo.jsp");
+		view.forward(request, response);
 
 	}
 

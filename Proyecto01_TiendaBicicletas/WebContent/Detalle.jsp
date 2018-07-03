@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta charsert="UTF-8">
-<title>Cat�logo</title>
+<title>Detalle</title>
 <link rel="stylesheet" href="Recursos/css/bootstrap.min.css">
 <link rel="stylesheet" href="Recursos/css/estilos.css">
 </head>
@@ -33,8 +33,7 @@
 					href="./Bicicleta.html">HOME <span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item">
-					<form method="post" action="SelectBici">
-						<input type="hidden" name="peticion" value="getCatalogo">
+					<form method="post" action="getAll">
 						<input
 							class="nav-link dropdown-toggle text-light font-weight-bold border border-dark bg-dark"
 							type="submit" value="CATALOGO">
@@ -66,7 +65,6 @@
 	<div id="Indicators" class="card container-fluid  pt-4 w-50"
 		style="width: 18rem;">
 		<div class="card-body">
-
 			<h4 class="card-title">Marca: ${bicicleta.marca}</h4>
 			<h5 class="card-subtitle">Modelo: ${bicicleta.modelo}</h5>
 			<h6 class="card-text">Categoria: ${bicicleta.categoria}</h6>
