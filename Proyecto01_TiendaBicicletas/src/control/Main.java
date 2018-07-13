@@ -1,18 +1,18 @@
 package control;
 
-import datos.IDatosBici;
-import datos.implementado.DatosBiciImp;
-import modelo.Bicicleta;
+import java.sql.SQLException;
+
+import database.JDBC;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SQLException {
 		// TODO Auto-generated method stub
 		JDBC jdbc = new JDBC();
 		
-		jdbc.conexion();
+		jdbc.getConnection();
 		
-		System.out.println(jdbc.a�adirBicicleta());
+		System.out.println(jdbc.anadirBicicleta());
 		
 		jdbc.desconexion();
 	}

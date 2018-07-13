@@ -88,7 +88,7 @@ public class JDBC {
 		}
 	}
 
-	public int a�adirBicicleta() throws SQLException {
+	public int anadirBicicleta() throws SQLException {
 
 		String query = "INSERT INTO bicicleta (categoria, marca, modelo, talla, precio) values ('"
 				+ new Read().text("Categor�a") + "','" + new Read().text("Marca") + "','" + new Read().text("Modelo")

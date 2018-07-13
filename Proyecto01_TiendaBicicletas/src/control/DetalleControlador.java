@@ -39,7 +39,7 @@ public class DetalleControlador extends HttpServlet {
 
 		String id = elem.toString();
 
-		id = id.substring(3, 4);
+		id = id.substring(3, id.length() - 1);
 
 		Bicicleta bicicleta = biciService.mostrarBicicleta(Integer.parseInt(id));
 
