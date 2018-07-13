@@ -8,6 +8,10 @@ import java.util.ArrayList;
 import database.*;
 import datos.IDatosBici;
 import modelo.Bicicleta;
+import modelo.Categoria;
+import modelo.Talla;
+import utilities.Read;
+import database.JDBC;
 
 public class DatosBiciImp implements IDatosBici {
 

@@ -5,14 +5,19 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import modelo.Categoria;
+import modelo.Talla;
+import utilities.Read;
+import utilities.Show;
+
 /**
- * Esta Clase abre la conexión con la Base de Datos
+ * Esta Clase abre la conexiï¿½n con la Base de Datos
  * 
  * @author Grupo4
  * 
  * 
  * 
- * @author Chen, Iván, Aitor, Alejandro
+ * @author Chen, Ivï¿½n, Aitor, Alejandro
  * 
  * @version 1.0
  */
@@ -29,14 +34,16 @@ public class JDBC {
 
 	String driverClassName = "com.mysql.jdbc.Driver";
 
-	String driverUrl = "jdbc:mysql://10.90.36.31:3306/tiendabicis"; // enlace hacia la BBDD
+	String driverUrl = "jdbc:mysql://10.90.36.31:3306/tiendabicis"; // enlace
+																	// hacia la
+																	// BBDD
 
 	String user = "grupo4"; // usuario de la BBDD
 
-	String password = "1234"; // contraseña del usuario
+	String password = "1234"; // contraseï¿½a del usuario
 
 	/**
-	 * Método de conexión
+	 * Mï¿½todo de conexiï¿½n
 	 * 
 	 * @throws SQLException
 	 */
@@ -49,7 +56,7 @@ public class JDBC {
 		} catch (SQLException se) {
 			System.out.println("Excepcion SQL: " + se.getMessage());
 			System.out.println("Estado SQL: " + se.getSQLState());
-			System.out.println("Código del Error: " + se.getErrorCode());
+			System.out.println("Cï¿½digo del Error: " + se.getErrorCode());
 		} catch (Exception se) {
 			System.out.println("Otro problema: " + se);
 		}
@@ -61,8 +68,8 @@ public class JDBC {
 	}
 
 	/**
-	 * Metodo para desconectar de BBDD y cerrar las conexiones que ha establecido
-	 * anteriormente del metodo conexion()
+	 * Metodo para desconectar de BBDD y cerrar las conexiones que ha
+	 * establecido anteriormente del metodo conexion()
 	 */
 	public void desconexion() {
 
@@ -79,6 +86,17 @@ public class JDBC {
 		} catch (SQLException se3) {
 			se3.printStackTrace();
 		}
+	}
+
+	public int aï¿½adirBicicleta() throws SQLException {
+
+		String query = "INSERT INTO bicicleta (categoria, marca, modelo, talla, precio) values ('"
+				+ new Read().text("Categorï¿½a") + "','" + new Read().text("Marca") + "','" + new Read().text("Modelo")
+				+ "','" + new Read().text("Talla") + "'," + new Read().text("Precio") + ")";
+		
+		int rs = st.executeUpdate(query);
+		return rs;
+
 	}
 
 }

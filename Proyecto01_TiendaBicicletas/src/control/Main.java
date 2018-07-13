@@ -8,9 +8,13 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		IDatosBici idatosBici= new DatosBiciImp();
-		Bicicleta b = idatosBici.mostrarBicicleta(1);
-		System.out.println(b);
+		JDBC jdbc = new JDBC();
+		
+		jdbc.conexion();
+		
+		System.out.println(jdbc.a�adirBicicleta());
+		
+		jdbc.desconexion();
 	}
 
 }
